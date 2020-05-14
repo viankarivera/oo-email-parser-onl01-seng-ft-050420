@@ -4,23 +4,16 @@
 # or whitespace (' ').
 
 class EmailParser
-  attr_accessor :name, :csv_emails
+  attr_accessor :emails
 
-  def initialize(csv_emails)
-#   # you don't need name in here, it is redundant/
-#   @name = name
-    @csv_emails = csv_emails
-  end
+def initialize(emails)
+  @emails = emails
+end
 
-# This will not work because "emails2" below will not be properly parsed
-# def parse
-#   csv_emails.split(/\s*,\s*/)
-# end
-
-  def parse
-    csv_emails.split.collect do |address|
+def parse
+    emails.split do |address|
       address.split(',')
     end
     .flatten.uniq
   end
-end 
+end

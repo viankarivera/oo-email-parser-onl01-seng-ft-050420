@@ -11,7 +11,7 @@ def initialize(email_address_parser)
 end
 
 def parse
-    email_address_parser.split.collect do |address|
+    @email_address_parser.split.collect do |address|
       address.split(",")
     end
     .flatten.uniq

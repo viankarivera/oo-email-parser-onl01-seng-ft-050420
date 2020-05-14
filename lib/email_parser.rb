@@ -11,9 +11,7 @@ def initialize(emails)
 end
 
 def parse
-  emails_array = @emails.split(/[, ]/).uniq
-    emails_array.reject! {|element| element.empty?}
-    emails_array
-  end
+  emails.delete(',').split.uniq
+end 
 
 end

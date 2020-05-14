@@ -11,7 +11,7 @@ def initialize(email_parser)
 end
 
 def parse
-    emails.split do |address|
+    email_parser.split do |address|
       address.split(',')
     end
     .flatten.uniq
